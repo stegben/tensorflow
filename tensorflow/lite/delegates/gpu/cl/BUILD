@@ -4,6 +4,7 @@ load(
     "tf_gpu_tests_tags",
 )
 load("//tensorflow:tensorflow.bzl", "if_google", "workspace_root")
+load("//tensorflow:tensorflow.bzl", "workspace_root")
 
 package(
     default_visibility = ["//visibility:public"],
@@ -520,6 +521,7 @@ flatbuffer_cc_library(
         "--scoped-enums",
         "-I " + workspace_root,
     ],
+    include_paths = [workspace_root],
     includes = [
         "//tensorflow/lite/delegates/gpu/common/task:serialization_base_cc_fbs_includes",
     ],
